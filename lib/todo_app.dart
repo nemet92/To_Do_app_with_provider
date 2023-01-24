@@ -33,8 +33,13 @@ class TodoApp extends StatelessWidget {
             height: 20,
           ),
           const ToolBarWidget(),
-          const TodoListitemWidget(),
-          const TodoListitemWidget(),
+          for (var i = 0; i < allTodos.length; i++)
+            Dismissible(
+                key: ValueKey(
+                  allTodos[i].id,
+                ),
+                onDismissed: ((direction) {}),
+                child: TodoListitemWidget(item: allTodos[i]))
         ],
       ),
     );

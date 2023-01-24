@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:todoprovider/model/todo_model.dart';
 
 class TodoListitemWidget extends StatelessWidget {
-  const TodoListitemWidget({super.key});
+  TodoModel item;
+  TodoListitemWidget({super.key, required this.item});
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +14,7 @@ class TodoListitemWidget extends StatelessWidget {
           debugPrint(value.toString());
         },
       ),
-      title: const Text("Spora Git"),
+      title: Text(item.decription),
     );
   }
 }
